@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Ysun&#39;s blogs">
 <meta property="og:description" content="#SSH 面试题相关 ####Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * fro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-04T11:48:50.763Z">
+<meta property="og:updated_time" content="2017-09-04T11:52:01.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH面试题整理">
 <meta name="twitter:description" content="#SSH 面试题相关 ####Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * fro">
@@ -352,9 +352,13 @@ Mysql的主键自增通过 auto_increment 实现.
 <pre><code>Struts2 的核心控制器为StrutsPrepareAndExecuteFilter , 在web.xml中配置, 拦截所有请求.  
 </code></pre><p>2.Struts2 中的Action是单例的, 还是非单例的, 为什么?</p>
 <pre><code>Struts2 中的Action必须是非单例的, 如果是单例的, 会存在线程安全问题;
+
 这是由于Struts2的封装请求参数的方式决定的, Struts2封装请求参数,
+
 要么是基于属性驱动, 要么基于模型驱动, 但是这两种方式都是需要在Action中来定义成员变量来接受请求参数的,
+
 如果声明了成员变量, 多个线程访问的是同一个对象的话, 就会存在线程安全问题,
+
 所以必须是一个Request请求对应一个Action实例, 或者说一个请求线程对应一个Action实例.    
 </code></pre><p>3.Struts2 中的几个配置文件的加载顺序, 如果我想定义常量, 来覆盖框架默认值, 应该在哪里定义?</p>
 <pre><code>配置文件加载顺序如下 : 
@@ -371,9 +375,15 @@ Mysql的主键自增通过 auto_increment 实现.
 
     如果想定义常量, 可以在自己工程中的配置文件 struts.xml 或 struts.properties中定义, 来覆盖前面框架默认的配置.
 </code></pre><p>4.为什么通过EL表达式, 可以获取struts2的ValueStack中的值?</p>
-<pre><code>由于Struts2中对request进行了增强 , 调用request的getAttribute(..) 方法时 ,默认先从request域中根据key获取值, 如果没有获取到值, 则从ValueStack中获取值;
+<pre><code>由于Struts2中对request进行了增强 , 调用request的getAttribute(..) 方法时 ,默认先从request域中根据key获取值,
+
+如果没有获取到值, 则从ValueStack中获取值;
 </code></pre><p>#####Hibernate<br>1.Hibernate 的工作原理 ?</p>
-<pre><code>hibernate，是一个全自动的ORM框架 , 通过对jdbc 进行封装，对java 类和 关系数据库进行mapping，实现了对关系数据库的面向对象方式的操作，改变了传统的jdbc + sql 操作数据的方式，从而使开发人员可以话更多精力进行对象方面的开发 , 可以使开发人员, 不用编写SQL语句.
+<pre><code>hibernate，是一个全自动的ORM框架 , 通过对jdbc 进行封装，
+
+对java 类和 关系数据库进行mapping，实现了对关系数据库的面向对象方式的操作，改变了传统的jdbc + sql 操作数据的方式，
+
+从而使开发人员可以话更多精力进行对象方面的开发 , 可以使开发人员, 不用编写SQL语句.
 </code></pre><ol>
 <li><p>Hibernate 中根据OID获取数据的方法有哪些 ? 有什么区别?</p>
 <pre><code>get  load 两个方法 .
@@ -389,7 +399,11 @@ Mysql的主键自增通过 auto_increment 实现.
 <li><p>什么是 Hibernate 延迟加载?</p>
 </li>
 </ol>
-<pre><code>延迟加载机制是为了避免一些无谓的性能开销而提出来的，所谓延迟加载就是当在真正需要数据的时候，才真正执行数据加载操作 , 降低数据库的访问压力, 提高访问效率.
+<pre><code>延迟加载机制是为了避免一些无谓的性能开销而提出来的，
+
+所谓延迟加载就是当在真正需要数据的时候，才真正执行数据加载操作 ,
+
+降低数据库的访问压力, 提高访问效率.
 </code></pre><ol>
 <li><p>cascade与inverse有什么区别?         </p>
 <pre><code>cascade它是完成级联操作
