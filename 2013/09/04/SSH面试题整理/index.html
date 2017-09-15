@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="#SSH 面试题相关 ####Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * fro">
+<meta name="description" content="#SSH 面试题相关 ###Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * from">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH面试题整理">
 <meta property="og:url" content="http://yoursite.com/2013/09/04/SSH面试题整理/index.html">
 <meta property="og:site_name" content="Ysun&#39;s blogs">
-<meta property="og:description" content="#SSH 面试题相关 ####Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * fro">
+<meta property="og:description" content="#SSH 面试题相关 ###Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * from">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-05T01:09:23.275Z">
+<meta property="og:updated_time" content="2017-09-15T00:25:23.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH面试题整理">
-<meta name="twitter:description" content="#SSH 面试题相关 ####Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * fro">
+<meta name="twitter:description" content="#SSH 面试题相关 ###Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * from">
 
 
 
@@ -372,7 +372,7 @@
 
       
         <p>#SSH 面试题相关</p>
-<p>####Oracle常见面试题<br>1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ?</p>
+<p>###Oracle常见面试题<br>1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ?</p>
 <pre><code>Mysql的分页很简单, 通过limit 关键字就可以实现分页;
 `select * from tables limit 开始查询的记录,查询的条数`
 
@@ -382,13 +382,15 @@
    (select * from 表名 order by 列名 desc) t
    where rownum&lt;=20 )
    where r&gt;10
-</code></pre><a id="more"></a>
+</code></pre><hr>
+<a id="more"></a>
 <p>2.Oracle 中的主键自增 与 Mysql中的主键自增如何实现 ?</p>
 <pre><code>Oracle的主键自增通过序列实现 ;
 
 Mysql的主键自增通过 auto_increment 实现.
-</code></pre><p>####Struts2 + Hibernate + Spring 常见面试题  </p>
-<p>#####Struts2:   </p>
+</code></pre><hr>
+<p>###Struts2 + Hibernate + Spring 常见面试题  </p>
+<p>####Struts2:   </p>
 <ol>
 <li>Struts2 的核心控制器是什么 , 在哪里配置?</li>
 </ol>
@@ -421,7 +423,8 @@ Mysql的主键自增通过 auto_increment 实现.
 <pre><code>由于Struts2中对request进行了增强 , 调用request的getAttribute(..) 方法时 ,默认先从request域中根据key获取值,
 
 如果没有获取到值, 则从ValueStack中获取值;
-</code></pre><p>#####Hibernate<br>1.Hibernate 的工作原理 ?</p>
+</code></pre><hr>
+<p>####Hibernate<br>1.Hibernate 的工作原理 ?</p>
 <pre><code>hibernate，是一个全自动的ORM框架 , 通过对jdbc 进行封装，
 
 对java 类和 关系数据库进行mapping，实现了对关系数据库的面向对象方式的操作，改变了传统的jdbc + sql 操作数据的方式，
