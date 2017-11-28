@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="常见的单例设计模式写法#懒汉式">
+<meta name="description" content="常见的单例设计模式写法 这种单例模式不仅不是线程安全的,而且通过反射就可以拿到实例对象  #懒汉式       private static Singleton mySingleton = null;          /**          * 私有化构造函数,防止通过构造函数创建对象          */         private Singleton(){}          pub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH面试题整理">
 <meta property="og:url" content="http://yoursite.com/2013/09/04/单例设计模式/index.html">
 <meta property="og:site_name" content="Ysun&#39;s blogs">
-<meta property="og:description" content="常见的单例设计模式写法#懒汉式">
+<meta property="og:description" content="常见的单例设计模式写法 这种单例模式不仅不是线程安全的,而且通过反射就可以拿到实例对象  #懒汉式       private static Singleton mySingleton = null;          /**          * 私有化构造函数,防止通过构造函数创建对象          */         private Singleton(){}          pub">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-28T11:54:19.007Z">
+<meta property="og:updated_time" content="2017-11-28T12:58:52.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH面试题整理">
-<meta name="twitter:description" content="常见的单例设计模式写法#懒汉式">
+<meta name="twitter:description" content="常见的单例设计模式写法 这种单例模式不仅不是线程安全的,而且通过反射就可以拿到实例对象  #懒汉式       private static Singleton mySingleton = null;          /**          * 私有化构造函数,防止通过构造函数创建对象          */         private Singleton(){}          pub">
 
 
 
@@ -381,8 +381,45 @@
       
 
       
-        <h2 id="常见的单例设计模式写法"><a href="#常见的单例设计模式写法" class="headerlink" title="常见的单例设计模式写法"></a>常见的单例设计模式写法</h2><pre><code>#懒汉式
-</code></pre>
+        <h2 id="常见的单例设计模式写法"><a href="#常见的单例设计模式写法" class="headerlink" title="常见的单例设计模式写法"></a>常见的单例设计模式写法</h2><ul>
+<li>这种单例模式不仅不是线程安全的,而且通过反射就可以拿到实例对象</li>
+</ul>
+<pre><code>#懒汉式
+      private static Singleton mySingleton = null;
+
+        /**
+         * 私有化构造函数,防止通过构造函数创建对象
+         */
+        private Singleton(){}
+
+        public  static Singleton getMySingleton(){
+
+            if (mySingleton == null){
+                return new Singleton();
+            }else {
+                return mySingleton;
+            }
+
+        }
+
+
+
+#饿汉式
+ private static Singleton mySingleton = new Singleton();
+
+    /**
+     * 私有化构造函数,防止通过构造函数创建对象
+     */
+    private Singleton(){}
+
+    /**
+     * @return 直接返回实例对象
+     */
+    public  static Singleton getMySingleton(){
+        return mySingleton;
+    }
+</code></pre><p>* </p>
+
       
     </div>
     

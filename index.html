@@ -530,7 +530,7 @@
 
       
         
-          <p>#Linux连接VPN<br>   </p><h4>Ubuntu：</h4><br>   <pre><code>sudo apt-get install -y pptp-linux</code></pre><br>   <h4>centos:</h4><br>   <pre><code>yum -y install ppp pptp pptp-setup</code></pre><br>   <blockquote><h3>2.连接vpn服务</h3></blockquote><br>   <h4>Ubuntu：</h4><br>   <pre><code>sudo pptpsetup –create pptpd –server x.x.x.x –username vpntest –password 1234567890 –encrypt –start</code></pre><br>   <h4>centos:</h4><br>   <pre><code>pptpsetup –create pptpd –server x.x.x.x –username vpntest –password 1234567890 –encrypt –start</code></pre><br>   <pre><code>–create是创建的连接名称<br>   –server是vpn的ip地址<br>   –username是用户名<br>   –password是密码，也可以没这个参数，命令稍后会自动询问。这样可以保证账号安全<br>   –encrypt 是表示需要加密，不必指定加密方式，命令会读取配置文件中的加密方式<br>   –start是表示创建连接完后马上连接</code></pre>
+          <p>#Linux连接VPN<br>   </p><h4>Ubuntu：</h4><br>   <pre><code>sudo apt-get install -y pptp-linux</code></pre><br>   <h4>centos:</h4><br>   <pre><code>yum -y install ppp pptp pptp-setup</code></pre><br>   <blockquote><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/04/Linux连接VPN的过程/#more" rel="contents">
@@ -834,8 +834,45 @@
       
         
           
-            <h2 id="常见的单例设计模式写法"><a href="#常见的单例设计模式写法" class="headerlink" title="常见的单例设计模式写法"></a>常见的单例设计模式写法</h2><pre><code>#懒汉式
-</code></pre>
+            <h2 id="常见的单例设计模式写法"><a href="#常见的单例设计模式写法" class="headerlink" title="常见的单例设计模式写法"></a>常见的单例设计模式写法</h2><ul>
+<li>这种单例模式不仅不是线程安全的,而且通过反射就可以拿到实例对象</li>
+</ul>
+<pre><code>#懒汉式
+      private static Singleton mySingleton = null;
+
+        /**
+         * 私有化构造函数,防止通过构造函数创建对象
+         */
+        private Singleton(){}
+
+        public  static Singleton getMySingleton(){
+
+            if (mySingleton == null){
+                return new Singleton();
+            }else {
+                return mySingleton;
+            }
+
+        }
+
+
+
+#饿汉式
+ private static Singleton mySingleton = new Singleton();
+
+    /**
+     * 私有化构造函数,防止通过构造函数创建对象
+     */
+    private Singleton(){}
+
+    /**
+     * @return 直接返回实例对象
+     */
+    public  static Singleton getMySingleton(){
+        return mySingleton;
+    }
+</code></pre><p>* </p>
+
           
         
       
