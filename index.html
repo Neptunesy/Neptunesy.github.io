@@ -579,7 +579,7 @@
   
   
 
-  <article class="post post-type-面试" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-设计模式" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -638,8 +638,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试相关/" itemprop="url" rel="index">
-                    <span itemprop="name">面试相关</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -676,8 +676,7 @@
 
       
         
-          
-            <h2 id="常见的单例设计模式写法"><a href="#常见的单例设计模式写法" class="headerlink" title="常见的单例设计模式写法"></a>常见的单例设计模式写法</h2><ul>
+          <h2 id="常见的单例设计模式写法"><a href="#常见的单例设计模式写法" class="headerlink" title="常见的单例设计模式写法"></a>常见的单例设计模式写法</h2><ul>
 <li>这种单例模式不仅不是线程安全的,而且通过反射就可以拿到实例对象</li>
 </ul>
 <pre><code>#懒汉式
@@ -714,9 +713,15 @@
     public  static Singleton getMySingleton(){
         return mySingleton;
     }
-</code></pre><p>* </p>
-
-          
+</code></pre><ul>
+<li><p>但是上述写法不是线程安全的，假如有两个线程同时访问getMySingleton,因为Instance是空，所以同时执行了new Instance，被构建了两次。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/04/单例设计模式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -964,7 +969,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
