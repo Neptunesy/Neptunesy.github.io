@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Ysun&#39;s blogs">
 <meta property="og:description" content="MongoDB学习笔记（一，安装MongoDB&amp;amp;可视化工具Compose）Windows（MongoDB）下的安装1.首先从官网下载MongoDB的zip包，解压到指定的目录，在创建两个文件夹分别是MongoDBDATA,MongoDBLOG,这两个文件夹可以随意命名，分别用来存储数据和日志文件，为了见名知义，我用了上面的命名。在MongDBLOG这个文件夹下创建一个mongodb.log">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-12T06:44:55.908Z">
+<meta property="og:updated_time" content="2018-07-12T12:15:20.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB学习">
 <meta name="twitter:description" content="MongoDB学习笔记（一，安装MongoDB&amp;amp;可视化工具Compose）Windows（MongoDB）下的安装1.首先从官网下载MongoDB的zip包，解压到指定的目录，在创建两个文件夹分别是MongoDBDATA,MongoDBLOG,这两个文件夹可以随意命名，分别用来存储数据和日志文件，为了见名知义，我用了上面的命名。在MongDBLOG这个文件夹下创建一个mongodb.log">
@@ -383,6 +383,7 @@
       
         <h1 id="MongoDB学习笔记（一，安装MongoDB-amp-可视化工具Compose）"><a href="#MongoDB学习笔记（一，安装MongoDB-amp-可视化工具Compose）" class="headerlink" title="MongoDB学习笔记（一，安装MongoDB&amp;可视化工具Compose）"></a>MongoDB学习笔记（一，安装MongoDB&amp;可视化工具Compose）</h1><h4 id="Windows（MongoDB）下的安装"><a href="#Windows（MongoDB）下的安装" class="headerlink" title="Windows（MongoDB）下的安装"></a>Windows（MongoDB）下的安装</h4><p>1.首先从官网下载MongoDB的zip包，解压到指定的目录，在创建两个文件夹分别是MongoDBDATA,MongoDBLOG,这两个文件夹可以随意命名，分别用来存储数据和日志文件，为了见名知义，我用了上面的命名。在MongDBLOG这个文件夹下创建一个mongodb.log文件，这个文件的作用是用来保存MongoDB的日志文件。</p>
 <p>2.接下来使用CMD，进入到MongDB的bin目录下，执行mongod  –dpath:（D:MongoDB\MongoDBDATA）此处的路径与上面你创建的文件夹目录一致即可。</p>
+ <a id="more"></a> 
 <p>3.在MongoDB的安装路径下，创建mongod.cfg（采用了YAML的文件格式）, 使用SubLine 打开后编辑内容<br>    systemLog: (指定MongoDB的log文件存储的位置)<br>        destination: file<br>    path: D:\MongoDB\MongoDBLOG\mongod.log<br>    storage: （指定MongoDB的数据存储的位置）<br>        journal:<br>            enabled: true<br>        dbPath: D:\MongoDB\MongoDBDATA<br>    bind_ip: (指定MongoDB的绑定IP，此处指定为0.0.0.0为任意IP都可访问)<br>        0.0.0.0<br>    net:<br>        port:27017(指定MongoDB的端口)<br>    security:<br>        authorization:enable(启用认证！)</p>
 <p>4.设置新的环境变量MONGO_HOME，即MongoDB的安装目录，在PATH环境变量下加入%MONGO_HOME%\bin, 这一步的作用是让Mongo命令可以在任意盘符使用。</p>
 <p>5.接下来安装MongoDB的服务，使其开机自启动，避免每次启动的麻烦，也可以省略这一步。</p>
@@ -415,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/05/拦截器和过滤器的区别和关系/" rel="next" title="拦截器和过滤器的区别和关系">
-                <i class="fa fa-chevron-left"></i> 拦截器和过滤器的区别和关系
+              <a href="/2018/06/04/# Docker学习之Dock初识（一）/" rel="next" title="Docker学习">
+                <i class="fa fa-chevron-left"></i> Docker学习
               </a>
             
           </div>
@@ -424,10 +425,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/04/# Docker学习之Dock初识（一）/" rel="prev" title="Docker学习">
-                Docker学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
