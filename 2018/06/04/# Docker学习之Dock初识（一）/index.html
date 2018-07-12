@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="#SSH 面试题相关 ##Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * from">
+<meta name="description" content="Docker学习之Dock初识（一）DockerFile中的命令详解ENV 命令用来指定环境变量ex:  ENV TZ “Asia/ShangHai”   用来指定镜像的时区             ENV TREM xterm           用来指定Linux的虚拟终端类型  ADD和COPY指令 需要说明的是在DockerFile中，ADD和COPY指令都用来拷贝文件，区别在于ADD可以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSH面试题整理">
-<meta property="og:url" content="http://yoursite.com/2013/09/04/SSH面试题整理/index.html">
+<meta property="og:title" content="Docker学习">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/# Docker学习之Dock初识（一）/index.html">
 <meta property="og:site_name" content="Ysun&#39;s blogs">
-<meta property="og:description" content="#SSH 面试题相关 ##Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * from">
+<meta property="og:description" content="Docker学习之Dock初识（一）DockerFile中的命令详解ENV 命令用来指定环境变量ex:  ENV TZ “Asia/ShangHai”   用来指定镜像的时区             ENV TREM xterm           用来指定Linux的虚拟终端类型  ADD和COPY指令 需要说明的是在DockerFile中，ADD和COPY指令都用来拷贝文件，区别在于ADD可以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-15T00:32:31.450Z">
+<meta property="og:updated_time" content="2018-07-12T06:44:56.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSH面试题整理">
-<meta name="twitter:description" content="#SSH 面试题相关 ##Oracle常见面试题1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ? Mysql的分页很简单, 通过limit 关键字就可以实现分页; `select * from tables limit 开始查询的记录,查询的条数`  而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;    select * from">
+<meta name="twitter:title" content="Docker学习">
+<meta name="twitter:description" content="Docker学习之Dock初识（一）DockerFile中的命令详解ENV 命令用来指定环境变量ex:  ENV TZ “Asia/ShangHai”   用来指定镜像的时区             ENV TREM xterm           用来指定Linux的虚拟终端类型  ADD和COPY指令 需要说明的是在DockerFile中，ADD和COPY指令都用来拷贝文件，区别在于ADD可以">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2013/09/04/SSH面试题整理/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/04/# Docker学习之Dock初识（一）/"/>
 
 
 
 
 
-  <title>SSH面试题整理 | Ysun's blogs</title>
+  <title>Docker学习 | Ysun's blogs</title>
   
 
 
@@ -287,12 +287,12 @@
   
   
 
-  <article class="post post-type-面试" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-DevOps" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/09/04/SSH面试题整理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/# Docker学习之Dock初识（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Neptunesy">
@@ -309,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSH面试题整理</h1>
+          <h1 class="post-title" itemprop="name headline">Docker学习</h1>
         
 
         <div class="post-meta">
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-04T15:22:34+08:00">
-                2013-09-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T15:22:34+08:00">
+                2018-06-04
               </time>
             
 
@@ -344,8 +344,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试相关/" itemprop="url" rel="index">
-                    <span itemprop="name">面试相关</span>
+                  <a href="/categories/DevOps/" itemprop="url" rel="index">
+                    <span itemprop="name">DevOps</span>
                   </a>
                 </span>
 
@@ -381,90 +381,60 @@
       
 
       
-        <p>#SSH 面试题相关</p>
-<p>##Oracle常见面试题<br>1.Oracle 中的分页 与 Mysql的分页都是如何实现的 ?</p>
-<pre><code>Mysql的分页很简单, 通过limit 关键字就可以实现分页;
-`select * from tables limit 开始查询的记录,查询的条数`
-
-而Oracle的分页相对来说比较麻烦, 需要通过rownum 伪列, 配置三层嵌套子查询实现;
-   select * from
-   (select rownum r,t.* from
-   (select * from 表名 order by 列名 desc) t
-   where rownum&lt;=20 )
-   where r&gt;10
-</code></pre><a id="more"></a>
-<p>2.Oracle 中的主键自增 与 Mysql中的主键自增如何实现 ?</p>
-<pre><code>Oracle的主键自增通过序列实现 ;
-
-Mysql的主键自增通过 auto_increment 实现.
-</code></pre><hr>
-<p>##Struts2 + Hibernate + Spring 常见面试题  </p>
-<p>###Struts2:   </p>
+        <h1 id="Docker学习之Dock初识（一）"><a href="#Docker学习之Dock初识（一）" class="headerlink" title="Docker学习之Dock初识（一）"></a>Docker学习之Dock初识（一）</h1><h3 id="DockerFile中的命令详解"><a href="#DockerFile中的命令详解" class="headerlink" title="DockerFile中的命令详解"></a>DockerFile中的命令详解</h3><h4 id="ENV-命令用来指定环境变量"><a href="#ENV-命令用来指定环境变量" class="headerlink" title="ENV 命令用来指定环境变量"></a>ENV 命令用来指定环境变量</h4><p>ex:</p>
 <ol>
-<li>Struts2 的核心控制器是什么 , 在哪里配置?</li>
+<li>ENV TZ “Asia/ShangHai”   用来指定镜像的时区            </li>
+<li>ENV TREM xterm           用来指定Linux的虚拟终端类型</li>
 </ol>
-<pre><code>Struts2 的核心控制器为StrutsPrepareAndExecuteFilter , 在web.xml中配置, 拦截所有请求.  
-</code></pre><p>2.Struts2 中的Action是单例的, 还是非单例的, 为什么?</p>
-<pre><code>Struts2 中的Action必须是非单例的, 如果是单例的, 会存在线程安全问题;
-
-这是由于Struts2的封装请求参数的方式决定的, Struts2封装请求参数,
-
-要么是基于属性驱动, 要么基于模型驱动, 但是这两种方式都是需要在Action中来定义成员变量来接受请求参数的,
-
-如果声明了成员变量, 多个线程访问的是同一个对象的话, 就会存在线程安全问题,
-
-所以必须是一个Request请求对应一个Action实例, 或者说一个请求线程对应一个Action实例.    
-</code></pre><p>3.Struts2 中的几个配置文件的加载顺序, 如果我想定义常量, 来覆盖框架默认值, 应该在哪里定义?</p>
-<pre><code>配置文件加载顺序如下 : 
-
-    A. default.properties : 该配置文件定义在struts2的核心包下
-
-    B. struts-default.xml : 该配置文件定义在struts2的核心包下
-
-    C. struts-plugin.xml  : 该配置文件定义在struts2的插件包下, 如struts-json-plugin.jar中
-
-    D. struts.xml          : 该配置文件为自己工程中的配置文件
-
-    E. struts.properties  : 自己工程中的配置文件(很少这么使用)
-
-    如果想定义常量, 可以在自己工程中的配置文件 struts.xml 或 struts.properties中定义, 来覆盖前面框架默认的配置.
-</code></pre><p>4.为什么通过EL表达式, 可以获取struts2的ValueStack中的值?</p>
-<pre><code>由于Struts2中对request进行了增强 , 调用request的getAttribute(..) 方法时 ,默认先从request域中根据key获取值,
-
-如果没有获取到值, 则从ValueStack中获取值; 
-</code></pre><hr>
-<p>####Hibernate<br>1.Hibernate 的工作原理 ?</p>
-<pre><code>hibernate，是一个全自动的ORM框架 , 通过对jdbc 进行封装，
-
-对java 类和 关系数据库进行mapping，实现了对关系数据库的面向对象方式的操作，改变了传统的jdbc + sql 操作数据的方式，
-
-从而使开发人员可以话更多精力进行对象方面的开发 , 可以使开发人员, 不用编写SQL语句.
-</code></pre><ol>
-<li>Hibernate 中根据OID获取数据的方法有哪些 ? 有什么区别?</li>
+<h4 id="ADD和COPY指令"><a href="#ADD和COPY指令" class="headerlink" title="ADD和COPY指令"></a>ADD和COPY指令</h4><ol>
+<li>需要说明的是在DockerFile中，ADD和COPY指令都用来拷贝文件，区别在于ADD可以自动将文件解压后拷贝，而COPY指令只能将解压后的文件进行拷贝。</li>
+<li>一般ADD命令用来添加一些镜像源或者拷贝一些配置文件，例如在Centos7中：</li>
 </ol>
-<pre><code>get  load 两个方法 .
-
-   get() 与 load() 方法的区别: 
-
-   A. load方法是延迟加载 , 只有查询OID之外的属性时, 才会查询 ; get方法立即查询, 则直接查询全部字段返回
-
-   B. 查询的数据不存在时 , load方法抛异常 , 而get方法返回 null
-
-   C. load加载的是代理对象 , 而get加载的是原始对象pojo
-</code></pre><ol>
-<li>什么是 Hibernate 延迟加载?</li>
+<ul>
+<li>ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo</li>
+<li>ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo</li>
+</ul>
+<h4 id="VOLUME-指令"><a href="#VOLUME-指令" class="headerlink" title="VOLUME 指令"></a>VOLUME 指令</h4><ol>
+<li>通过宿主机映射contina中的文件夹</li>
 </ol>
-<pre><code>延迟加载机制是为了避免一些无谓的性能开销而提出来的，
-
-所谓延迟加载就是当在真正需要数据的时候，才真正执行数据加载操作 ,
-
-降低数据库的访问压力, 提高访问效率.
-</code></pre><ol>
-<li>cascade与inverse有什么区别?         </li>
+<h4 id="ONBUILD-指令"><a href="#ONBUILD-指令" class="headerlink" title="ONBUILD 指令"></a>ONBUILD 指令</h4><ol>
+<li>ONBUILD RUN 指令用来当构建这个镜像时，指定的命令不会去执行</li>
+<li>通过当前镜像作为基础镜像，构建下一个镜像时，启动生效。 </li>
 </ol>
-<pre><code>cascade它是完成级联操作
-   Inverse它只有在双向关联情况下有作用，它来指定由哪一方维护外键。        
-</code></pre>
+<h4 id="RUN-指令"><a href="#RUN-指令" class="headerlink" title="RUN 指令"></a>RUN 指令</h4><ol>
+<li>RUN指令后一般会书写可被执行的SHELL命令。<br>ex:<ul>
+<li>yum install lzzrz(安装文件上传下载服务) </li>
+<li>bash -c ‘touch /app.jar’(拷贝编译后的jar到容器中)</li>
+</ul>
+</li>
+</ol>
+<h4 id="EXPOSE-指令"><a href="#EXPOSE-指令" class="headerlink" title="EXPOSE 指令"></a>EXPOSE 指令</h4><p>1.在DockFile中用EXPOSE：端口号 可以选择将指定的端口号暴露给宿主机 </p>
+<h4 id="ENTRYPOINT-指令"><a href="#ENTRYPOINT-指令" class="headerlink" title="ENTRYPOINT 指令"></a>ENTRYPOINT 指令</h4><p>1.ENTRYPOINT 指令用来指定容器（Continer）每次启动的时候执行的命令<br> ex:</p>
+<ul>
+<li>ENTRYPOINT [“/usr/bin/supervisord”, “-n”, “-c”, “/etc/supervisord.conf”] 这个命令就是用来在容器启动的时候，启动进程管理器 Supervisord 并指定配置文件</li>
+</ul>
+<h3 id="Docker-命令相关"><a href="#Docker-命令相关" class="headerlink" title="Docker 命令相关"></a>Docker 命令相关</h3><h4 id="Docker-Build"><a href="#Docker-Build" class="headerlink" title="Docker Build"></a>Docker Build</h4><ol>
+<li>Docker build -t repository_url/namespace/continer_name/centos-lastest .</li>
+</ol>
+<p>-t 代表指定镜像的名称<br>不写 -t 参数 则需指定 /path DockFile 文件所在的位置<br>最后的. DockFile在当前目录下</p>
+<h4 id="Docker-run"><a href="#Docker-run" class="headerlink" title="Docker run"></a>Docker run</h4><p>1.docker  run -d -p 2222:22 –name dbserver</p>
+<ul>
+<li>-d 在后端启动，返回docker的lear</li>
+<li>-it 以交互模式启动</li>
+<li>-p 映射端口，不管continar 是否重启映射端口不会发生变化</li>
+<li>-P（大写）宿主机会随机选择端口映射22，重新启动之后会发生变化</li>
+</ul>
+<h4 id="Docker-ps"><a href="#Docker-ps" class="headerlink" title="Docker ps"></a>Docker ps</h4><ol>
+<li>docker ps 查看所有正在运行的容器。</li>
+<li>docker ps -a 查看所有已经构建成功的容器。</li>
+</ol>
+<p>###遇到的一些问题及解决方案</p>
+<ol>
+<li>在写Docker中的启动脚本时要在SHELL脚本的开始加上 set -e </li>
+<li>set -e 的作用是当脚本执行发生错误时，立即停止执行，避免造成更大的影响</li>
+<li>在windows中执行Shell脚本的时候，会因为windows 和 unix 的换行符和其他隐藏字符导致脚本无法继续执行，此时要通过 :set ff 查看当前文档的格式是unix 还是windows，如果是windows 需要更改为unix,保存之后，继续执行就不会发生错误了。</li>
+</ol>
+
       
     </div>
     
@@ -488,8 +458,8 @@ Mysql的主键自增通过 auto_increment 实现.
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2013/09/04/IDEAVMoptions配置/" rel="next" title="IDEA JVM参数设置">
-                <i class="fa fa-chevron-left"></i> IDEA JVM参数设置
+              <a href="/2018/06/04/## MongoDB学习笔记（一，安装MongoDB&可视化工具Compose）/" rel="next" title="MongoDB学习">
+                <i class="fa fa-chevron-left"></i> MongoDB学习
               </a>
             
           </div>
@@ -497,10 +467,6 @@ Mysql的主键自增通过 auto_increment 实现.
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/04/单例设计模式/" rel="prev" title="单例设计模式">
-                单例设计模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -552,8 +518,17 @@ Mysql的主键自增通过 auto_increment 实现.
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://cl.ly/0a1m3d1e0V1x/tx.jpg"
@@ -619,6 +594,22 @@ Mysql的主键自增通过 auto_increment 实现.
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker学习之Dock初识（一）"><span class="nav-number">1.</span> <span class="nav-text">Docker学习之Dock初识（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DockerFile中的命令详解"><span class="nav-number">1.0.1.</span> <span class="nav-text">DockerFile中的命令详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ENV-命令用来指定环境变量"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">ENV 命令用来指定环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ADD和COPY指令"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">ADD和COPY指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VOLUME-指令"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">VOLUME 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ONBUILD-指令"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">ONBUILD 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RUN-指令"><span class="nav-number">1.0.1.5.</span> <span class="nav-text">RUN 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EXPOSE-指令"><span class="nav-number">1.0.1.6.</span> <span class="nav-text">EXPOSE 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ENTRYPOINT-指令"><span class="nav-number">1.0.1.7.</span> <span class="nav-text">ENTRYPOINT 指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-命令相关"><span class="nav-number">1.0.2.</span> <span class="nav-text">Docker 命令相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-Build"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Docker Build</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-run"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Docker run</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-ps"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">Docker ps</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
